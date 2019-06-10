@@ -3,7 +3,7 @@
     "description": "An Hylink PHP framework.",
     "type": "project",
     "require": {
-        "hyfs/hyf": "^2.0"
+        "hy/hyf": "^2.0"
     },
     "autoload": {
         "psr-4": {
