@@ -1,0 +1,13 @@
+{
+    "name": "HYF",
+    "description": "An Hylink PHP framework.",
+    "type": "project",
+    "require": {
+        "hyfs/hyf": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "application\\": "application/"
+        }
+    }
+}
