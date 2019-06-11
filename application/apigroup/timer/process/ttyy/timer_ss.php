@@ -1,5 +1,5 @@
 <?php
-namespace application\api\timer\process\ttyy;
+namespace application\apigroup\timer\process\ttyy;
 
 class timer_ss
 {

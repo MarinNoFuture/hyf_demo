@@ -1,5 +1,5 @@
 <?php
-namespace application\api\init\task;
+namespace application\apigroup\init\task;
 
 class test {
     

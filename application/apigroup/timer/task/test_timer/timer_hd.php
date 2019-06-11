@@ -1,5 +1,5 @@
 <?php
-namespace application\api\timer\task\test_timer;
+namespace application\apigroup\timer\task\test_timer;
 
 class timer_hd {
     

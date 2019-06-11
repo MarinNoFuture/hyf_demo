@@ -1,5 +1,5 @@
 <?php
-namespace application\api\init;
+namespace application\apigroup\init;
 
 class app
 {

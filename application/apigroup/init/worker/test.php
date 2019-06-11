@@ -1,5 +1,5 @@
 <?php
-namespace application\api\init\worker;
+namespace application\apigroup\init\worker;
 
 class test {
     

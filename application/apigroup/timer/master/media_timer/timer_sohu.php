@@ -1,5 +1,5 @@
 <?php
-namespace application\api\timer\master\media_timer;
+namespace application\apigroup\timer\master\media_timer;
 
 class timer_sohu
 {

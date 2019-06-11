@@ -1,5 +1,5 @@
 <?php
-namespace application\api\timer\worker\test_timer;
+namespace application\apigroup\timer\worker\test_timer;
 
 class timer_sd {
     

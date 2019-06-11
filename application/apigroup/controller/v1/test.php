@@ -1,5 +1,5 @@
 <?php
-namespace application\api\controller\v1;
+namespace application\apigroup\controller\v1;
 
 use hyf\facade\output;
 use hyf\facade\table;

@@ -1,5 +1,5 @@
 <?php
-namespace application\api\server;
+namespace application\apigroup\server;
 
 use hyf\facade\output;
 

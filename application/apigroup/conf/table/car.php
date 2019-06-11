@@ -1,5 +1,5 @@
 <?php
-namespace application\api\conf\table;
+namespace application\apigroup\conf\table;
 
 class car
 {

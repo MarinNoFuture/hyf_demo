@@ -9,7 +9,7 @@
  *
  * @author Makle <zhang.tao@hylinkad.com>
  */
-namespace application\api\async;
+namespace application\apigroup\async;
 
 class async
 {
