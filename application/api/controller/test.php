@@ -21,7 +21,7 @@ class test
 //        var_dump(\Hyf::$request);
         //接受参数 request()->get()，等等方法具体参见https://wiki.swoole.com/wiki/page/328.html
         var_dump(\Hyf::$dir);
-        var_dump(TEST_CONST);
+//        var_dump(TEST_CONST);
         table::user()->set('hello', [
             'name' => '李四',
             'age' => 40,
