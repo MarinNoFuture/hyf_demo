@@ -23,12 +23,13 @@ class before
 
     public function global_auth()
     {
+
 //        throw new myException('认证失败');
     }
 
     public function router_test_index()
     {
-        throw new myException('进入了testindex');
+//        throw new myException('进入了testindex');
     }
 
     public function router_aaa_bbb_index()

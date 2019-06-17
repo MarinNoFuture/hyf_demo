@@ -5,7 +5,7 @@ class test {
     
     public function run(){
         
-        echo "master test init" . PHP_EOL;
+        echo "master 里面的 test init" . PHP_EOL;
         
     }
     

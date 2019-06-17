@@ -21,7 +21,6 @@ class test
 //        var_dump(\Hyf::$request);
         //接受参数 request()->get()，等等方法具体参见https://wiki.swoole.com/wiki/page/328.html
         var_dump(\Hyf::$dir);
-        var_dump(TEST_CONST);
         table::user()->set('hello', [
             'name' => '李四',
             'age' => 40,
@@ -34,12 +33,19 @@ class test
 //        var_dump(redis()->get('test'));
 
         $result = mysql()->query("select id from pmp_config_media limit 0,1;");
+        var_dump($result);
 
         //$result_slave = mysql('mysql_slave')->query("select id from pmp_config_media limit 1,1;");
 
         $task_id = \Hyf::$server->task(\Hyf::$request->get);
 
         echo "$task_id\n";
+        
+        $a = model('bbb/ccc', [1], [2])->getById();
+        var_dump($a);
+        
+        $b = helper('ccc', [2], 4)->getById();
+        var_dump($b);
 
         return output::success($result);
     }

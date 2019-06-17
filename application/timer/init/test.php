@@ -1,22 +1,20 @@
 <?php
 namespace application\timer\init;
 
-use hyf\facade\table;
-
 class test
 {
 
     public function run()
     {
-        echo "test init" . PHP_EOL;
+        echo "test init" . date("Y-m-d H:i:s") . PHP_EOL;
         
-        table::user()->set('hi', [
+        table('user')->set('hi', [
             'name' => '李四', 
             'age' => 40, 
             'sex' => '男'
         ]);
         
-        var_dump(\Hyf::$config);
-        var_dump(\Hyf::$app_config);
+        //var_dump(\Hyf::$config);
+        //var_dump(\Hyf::$app_config);
     }
 }

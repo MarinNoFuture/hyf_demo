@@ -1,14 +1,12 @@
 <?php
-namespace application\timer\timer;
+namespace application\api\timer\ttyy;
 
-use hyf\facade\table;
-
-class timer_sd
+class timer_ss
 {
     
     // 定时器名称
-    public $name = "timer_sd";
-
+    public $name = "timer_ss";
+    
     /**
      *  设置定时器执行时间规则，支持crontab基本设置格式，支持秒级定时器
      *            0 1 2 3 4 5
@@ -21,17 +19,15 @@ class timer_sd
      *            | | +--------- hour (0 - 23)
      *            | +----------- min (0 - 59)
      *            +------------- sec (0-59) [秒可选参数，不填写默认为 1]
-     *  
+     *
      */
-    public $loop_time = "* */2 * * * *";
-
+    public $loop_time = "*/10 * * * * *";
+    
     // 定时器执行入口
     public function run()
     {
-        echo "timer sd" . date("Y-m-d H:i:s") . PHP_EOL;
-        // sleep(5);
-        if (table('user')->exists('hi')) {
-            var_dump(table::user()->get('hi'));
-        }
+        
+        echo "timer ss, I am process timer. | " . date("Y-m-d H:i:s") . PHP_EOL;
+        
     }
 }
