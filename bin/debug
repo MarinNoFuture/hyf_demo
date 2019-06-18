@@ -1,0 +1,20 @@
+<?php
+// 引入自动加载
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$opt = getopt("n:p:c:", [
+    "name:", 
+    "path:", 
+    "class:"
+]);
+
+if (!empty($opt["n"]) && !empty($opt["c"])) {
+    $class = empty($opt["p"]) ? "\\application\\{$opt["n"]}\\timer\\{$opt["c"]}" : "\\application\\{$opt["n"]}\\timer\\{$opt["p"]}\\{$opt["c"]}";
+} elseif (!empty($opt["name"]) && !empty($opt["class"])) {
+    $class = empty($opt["path"]) ? "\\application\\{$opt["name"]}\\timer\\{$opt["class"]}" : "\\application\\{$opt["name"]}\\timer\\{$opt["path"]}\\{$opt["class"]}";
+} else{
+    exit("参数错误!\n 使用方法：php debug -nname -ppath -cclass 或者 php debug --name=name --path=path --class=class \n");
+}
+
+$class_object = new $class();
+$class_object->run();
