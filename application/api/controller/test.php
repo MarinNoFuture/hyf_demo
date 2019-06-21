@@ -6,7 +6,6 @@ use hyf\facade\table;
 
 class test
 {
-
     public function index()
     {
         var_dump(config());
