@@ -23,6 +23,6 @@ class async
     public static function finish($server, $task_id, $data)
     {
         // do something
-        echo $data . PHP_EOL;
+        echo "I'm task,data: " . $data . PHP_EOL;
     }
 }

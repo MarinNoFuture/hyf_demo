@@ -30,16 +30,16 @@ class test
 
         var_dump(table('user')->get('hello'));
 
-//        var_dump(redis()->get('test'));
+        //var_dump(redis()->get('test'));
 
-        $result = mysql()->query("select id from pmp_config_media limit 0,1;");
+        $result = mysql()->query("select * from pmp_config_media limit 0,1;");
 
         //$result_slave = mysql('mysql_slave')->query("select id from pmp_config_media limit 1,1;");
 
         $task_id = \Hyf::$server->task(\Hyf::$request->get);
 
-        echo "$task_id\n";
-
+        var_dump($task_id);
+        
         return output::success($result);
     }
 }

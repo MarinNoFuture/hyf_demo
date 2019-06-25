@@ -28,7 +28,7 @@ class before
 
     public function router_test_index()
     {
-        throw new myException('进入了testindex');
+        //throw new myException('进入了testindex');
     }
 
     public function router_aaa_bbb_index()

@@ -1,15 +1,13 @@
 <?php
 namespace application\api\controller\aaa;
 
-use hyf\facade\output;
-use hyf\facade\table;
-
 class bbb
 {
-
     public function index()
     {
-        echo 'dddd';
-        exit;
+        var_dump(request()->get);
+        echo 'dddd' . PHP_EOL;
+        echo swoole_version() . PHP_EOL;
+        return json_encode(["ret" => 0, "msg" => "ok", "data" => ["id" => 123, "value" => swoole_version()]]);
     }
 }

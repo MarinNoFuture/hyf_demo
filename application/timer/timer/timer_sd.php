@@ -23,7 +23,7 @@ class timer_sd
      *            +------------- sec (0-59) [秒可选参数，不填写默认为 1]
      *  
      */
-    public $loop_time = "* */2 * * * *";
+    public $loop_time = "* */1 * * * *";
 
     // 定时器执行入口
     public function run()

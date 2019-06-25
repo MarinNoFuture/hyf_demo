@@ -1,12 +1,10 @@
 <?php
-namespace application\apigroup\conf\table;
+namespace application\api\conf;
 
-class user
+class table
 {
-    
-    public static $name = "user";
 
-    public static $table = [
+    public static $user = [
         [
             'name' => 'name',
             'type' => 'string',
@@ -21,6 +19,19 @@ class user
             'name' => 'sex',
             'type' => 'string',
             'size' => 5
+        ]
+    ];
+    
+    public static $car = [
+        [
+            'name' => 'name',
+            'type' => 'string',
+            'size' => 50
+        ],
+        [
+            'name' => 'color',
+            'type' => 'string',
+            'size' => 10
         ]
     ];
 }

@@ -10,6 +10,5 @@ class bbb
     public function index()
     {
         var_dump('bbb');
-        exit;
     }
 }
