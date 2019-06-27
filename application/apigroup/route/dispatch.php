@@ -4,7 +4,7 @@
  */
 namespace application\apigroup\route;
 
-class router
+class dispatch
 {
     /**
      * 自定义路由解析规则

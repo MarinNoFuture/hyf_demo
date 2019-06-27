@@ -5,7 +5,7 @@
  */
 namespace application\api\route;
 
-class handler
+class router
 {
 
     public static function Run($handler)
