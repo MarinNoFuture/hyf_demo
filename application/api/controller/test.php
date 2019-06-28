@@ -42,4 +42,12 @@ class test
         
         return output::success($result);
     }
+    
+    public function ddd(){
+        if (table('user')->exists('hello')) {
+            var_dump(table::user()->get('hello'));
+        }
+        $result = mysql()->query("select * from pmp_config_media limit 0,1;");
+        return output::success($result);
+    }
 }

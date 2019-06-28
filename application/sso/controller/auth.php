@@ -1,6 +1,7 @@
 <?php
 namespace application\sso\controller;
 
+use application\sso\conf\table;
 use application\sso\lib\jwt;
 use application\sso\lib\res;
 use application\sso\lib\vcode;
@@ -9,6 +10,20 @@ use hyf\component\exception\myException;
 class auth
 {
     public static $expr = 60 * 60 * 2;
+
+
+    public function vcode()
+    {
+        $vcode = new vcode(4,80,20,14);
+        $im = $vcode->doimg();
+
+        $filename = $vcode->getFileName();
+        table('user')->set($filename, [
+            'vcode' => $vcode->getCode()
+        ]);
+        response()->cookie('TOKEN', $filename, time() + self::$expr, '/');
+        return res::success(['url' => $im, 'token'=> $filename]);
+    }
 
     public function login()
     {
@@ -27,8 +42,8 @@ class auth
         if (empty($token)) {
             throw new myException('请求失败！非法登陆！');
         }
-
         $user = table('user')->get($token);
+
         if (empty($user)) {
             throw new myException('请求失败！非法登陆！');
         }
@@ -38,6 +53,7 @@ class auth
         }
 
         $uid = $this->checkLogin();
+
 
         if ($uid) {
             $jwt = new jwt();
@@ -61,6 +77,7 @@ class auth
     public function gettoken()
     {
         $token = request()->cookie['TOKEN'];
+        var_dump($token);
         if (empty($token)) {
             throw new myException('请求失败！token参数错误！');
         }
@@ -90,19 +107,6 @@ class auth
         }
 
         return res::error(['msg' => '退出失败！']);
-    }
-
-    public function vcode()
-    {
-        $vcode = new vcode(4,80,20,14);
-        $im = $vcode->doimg();
-
-        $filename = $vcode->getFileName();
-        table('user')->set($filename, [
-            'vcode' => $vcode->getCode()
-        ]);
-        response()->cookie('TOKEN', $filename, time() + self::$expr, '/');
-        return res::success(['url' => $im]);
     }
 
 
