@@ -27,7 +27,8 @@ class router
         
         // $handler::map(['get','post'], '/aaa/bbb', 'aaa\bbb@index');
         $router::get('/test', 'test@index'); // 应用目录/controller/aaa/bbb.php
-        $router::get('/test/test', 'test@test');
+        $router::get('/test/ddd', 'test@ddd');
+        $router::get('/htmltest', 'test@html');
         
         $router::get('/middleware', function () {
             echo "hello hyf\n";

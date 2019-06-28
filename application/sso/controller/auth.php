@@ -1,7 +1,6 @@
 <?php
 namespace application\sso\controller;
 
-use application\sso\conf\table;
 use application\sso\lib\jwt;
 use application\sso\lib\res;
 use application\sso\lib\vcode;
