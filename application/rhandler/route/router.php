@@ -24,6 +24,9 @@ class router
                 'key' => 'hello'
             ]);
         });
+        $router::get('/test/hello', function () {
+            return 'hello';
+        });
         
         // $handler::map(['get','post'], '/aaa/bbb', 'aaa\bbb@index');
         $router::get('/test', 'test@index'); // 应用目录/controller/aaa/bbb.php

@@ -1,9 +1,6 @@
 <?php
 namespace application\apigroup\controller\v2;
 
-use hyf\facade\output;
-use hyf\facade\table;
-
 class test
 {
 

@@ -2,7 +2,6 @@
 namespace application\apigroup\controller\v1;
 
 use hyf\facade\output;
-use hyf\facade\table;
 
 class test
 {
@@ -21,12 +20,12 @@ class test
 //        var_dump(\Hyf::$request);
         //接受参数 request()->get()，等等方法具体参见https://wiki.swoole.com/wiki/page/328.html
         var_dump(\Hyf::$dir);
-        table::user()->set('hello', [
+        table('user')->set('hello', [
             'name' => '李四',
             'age' => 40,
             'sex' => '男'
         ]);
-        var_dump(table::user()->count());
+        var_dump(table('user')->count());
 
         var_dump(table('user')->get('hello'));
 

@@ -2,7 +2,6 @@
 namespace application\api\controller;
 
 use hyf\facade\output;
-use hyf\facade\table;
 
 class test
 {
@@ -11,22 +10,24 @@ class test
         var_dump(config());
         //等同于
         //var_dump(\Hyf::$config);
+        
+        var_dump(server_config());
 
         var_dump(app_config());
         //等同于
         //var_dump(\Hyf::$app_config);
 
         var_dump(request());
-//        var_dump(\Hyf::$request);
+        //        var_dump(\Hyf::$request);
         //接受参数 request()->get()，等等方法具体参见https://wiki.swoole.com/wiki/page/328.html
         var_dump(\Hyf::$dir);
-//        var_dump(TEST_CONST);
-        table::user()->set('hello', [
+        //        var_dump(TEST_CONST);
+        table('user')->set('hello', [
             'name' => '李四',
             'age' => 40,
             'sex' => '男'
         ]);
-        var_dump(table::user()->count());
+        var_dump(table('user')->count());
 
         var_dump(table('user')->get('hello'));
 
@@ -39,15 +40,21 @@ class test
         $task_id = \Hyf::$server->task(\Hyf::$request->get);
 
         var_dump($task_id);
-        
+
         return output::success($result);
     }
-    
-    public function ddd(){
+
+    public function ddd()
+    {
         if (table('user')->exists('hello')) {
-            var_dump(table::user()->get('hello'));
+            var_dump(table('user')->get('hello'));
         }
         $result = mysql()->query("select * from pmp_config_media limit 0,1;");
         return output::success($result);
+    }
+
+    public function hello()
+    {
+        return 'hello';
     }
 }
