@@ -7,7 +7,8 @@ return [
        'password' => 123456,
        'database' => 'uni_pmp',
        'charset' => 'utf8',
-       'timeout' => 2
+       'timeout' => 2,
+       'strict' => false
    ],
    'mysql_slave' => [
        'host' => 'localhost',
