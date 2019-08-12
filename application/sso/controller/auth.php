@@ -4,7 +4,6 @@ namespace application\sso\controller;
 use application\sso\lib\jwt;
 use application\sso\lib\res;
 use application\sso\lib\vcode;
-use hyf\component\exception\myException;
 
 class auth
 {
@@ -27,28 +26,28 @@ class auth
     public function login()
     {
         if (empty(request()->get['upass'])) {
-            throw new myException('请求失败！upass参数不正确！');
+            throw new \Exception('请求失败！upass参数不正确！');
         }
 
         if (empty(request()->get['uname'])) {
-            throw new myException('请求失败！uname参数不正确！');
+            throw new \Exception('请求失败！uname参数不正确！');
         }
 
         if (empty(request()->get['vcode'])) {
-            throw new myException('请求失败！vcode参数不正确！');
+            throw new \Exception('请求失败！vcode参数不正确！');
         }
         $token = request()->cookie['TOKEN'];
         if (empty($token)) {
-            throw new myException('请求失败！非法登陆！');
+            throw new \Exception('请求失败！非法登陆！');
         }
         $user = table('user')->get($token);
 
         if (empty($user)) {
-            throw new myException('请求失败！非法登陆！');
+            throw new \Exception('请求失败！非法登陆！');
         }
 
         if ($user['vcode'] != request()->get['vcode']) {
-            throw new myException('请求失败！验证码错误！');
+            throw new \Exception('请求失败！验证码错误！');
         }
 
         $uid = $this->checkLogin();
@@ -78,12 +77,12 @@ class auth
         $token = request()->cookie['TOKEN'];
         var_dump($token);
         if (empty($token)) {
-            throw new myException('请求失败！token参数错误！');
+            throw new \Exception('请求失败！token参数错误！');
         }
 
         $user = table('user')->get($token);
         if (empty($user)) {
-            throw new myException('请求失败！token不存在！');
+            throw new \Exception('请求失败！token不存在！');
         }
 
         return res::success(['token' => $token]);
@@ -93,7 +92,7 @@ class auth
     {
         $token = request()->get['token'];
         if (empty($token)) {
-            throw new myException('请求失败！token参数错误！');
+            throw new \Exception('请求失败！token参数错误！');
         }
 
         $user = table('user')->get($token);
@@ -113,21 +112,21 @@ class auth
     {
         $token = request()->get['token'];
         if (empty($token)) {
-            throw new myException('请求失败！token参数不正确！');
+            throw new \Exception('请求失败！token参数不正确！');
         }
         // todo: jwt要不要验证
         //$return res = $this->jwt->verifyToken(request()->get['token']);
 
         $user = table('user')->get($token);
         if (empty($user)) {
-            throw new myException('请求失败！token不存在！');
+            throw new \Exception('请求失败！token不存在！');
         }
         if (empty($user['uid'])) {
-            throw new myException('请求失败！您还未登陆！');
+            throw new \Exception('请求失败！您还未登陆！');
         }
 
         if ((int)time()-$user['last_active_time'] > self::$expr) {
-            throw new myException('您的登陆已过期，请重新登陆！');
+            throw new \Exception('您的登陆已过期，请重新登陆！');
         }
 
         $user['last_active_time'] = time();

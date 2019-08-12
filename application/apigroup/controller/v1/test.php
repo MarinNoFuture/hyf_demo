@@ -1,6 +1,5 @@
 <?php
 namespace application\apigroup\controller\v1;
-
 use hyf\facade\output;
 
 class test

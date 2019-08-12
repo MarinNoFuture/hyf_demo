@@ -14,6 +14,6 @@ class dispatch
      */
     public function run()
     {
-        return ['v1', 'bbb', 'index'];
+        return ['v1', 'test', 'index'];
     }
 }
