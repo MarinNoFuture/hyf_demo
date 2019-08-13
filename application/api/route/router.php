@@ -1,7 +1,7 @@
 <?php
 /**
- * router handler
- * 配置文件中路由模式设置为 handler 模式，并且设置该路由文件即可使用
+ * router handle
+ * 配置文件中路由模式设置为 handle 模式，并且设置该路由文件即可使用
  */
 namespace application\api\route;
 

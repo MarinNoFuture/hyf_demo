@@ -1,5 +1,5 @@
 <?php
-namespace application\rhandler\middleware;
+namespace application\rhandle\middleware;
 
 class v3group
 {

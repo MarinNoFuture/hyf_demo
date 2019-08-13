@@ -1,5 +1,5 @@
 <?php
-namespace application\rhandler\init;
+namespace application\rhandle\init;
 
 class test {
     

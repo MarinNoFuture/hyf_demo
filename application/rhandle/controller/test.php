@@ -1,6 +1,6 @@
 <?php
 
-namespace application\rhandler\controller;
+namespace application\rhandle\controller;
 
 use hyf\facade\output;
 
