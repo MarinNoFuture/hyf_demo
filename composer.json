@@ -2,12 +2,12 @@
     "name": "HYF",
     "description": "An Hylink PHP framework.",
     "type": "project",
-    "require": {
-        "hy/hyf": "^2.2"
-    },
     "autoload": {
         "psr-4": {
             "application\\": "application/"
         }
+    },
+    "require": {
+        "hy/hyf": "^2.2"
     }
 }

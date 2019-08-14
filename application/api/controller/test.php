@@ -37,10 +37,6 @@ class test
 
         //$result_slave = mysql('mysql_slave')->query("select id from pmp_config_media limit 1,1;");
 
-        $task_id = \Hyf::$server->task(\Hyf::$request->get);
-
-        var_dump($task_id);
-
         return output::success($result);
     }
 
@@ -56,5 +52,17 @@ class test
     public function hello()
     {
         return 'hello';
+    }
+    
+    // 异步task示例
+    public function async_test()
+    {
+        $task_id1 = task('async/test/md::tsd', 'data: testxxxxxxxx111', function($data, $task_id){
+            var_dump($data, $task_id);
+        });
+        $task_id2 = task('async/test/md::tyd', 'data: testxxxxxxxx222', function($data, $task_id){
+            var_dump($data, $task_id);
+        });
+        return output::success(["task_id"=>$task_id1 . "|" . $task_id2, "memo"=>"async_test"]);
     }
 }

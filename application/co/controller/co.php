@@ -67,7 +67,7 @@ class co
 
     /**
      * 一鍵协程化测试
-     * 可以在go函数中一键协程化同步操作代码异步化，server.ini配置中开启即可，具体可以使用的php同步方法列表：
+     * 可以在go函数中一键协程化同步操作代码异步化，server.php配置中开启即可，具体可以使用的php同步方法列表：
      * 可用列表
      * redis扩展
      * 使用mysqlnd模式的pdo、mysqli扩展，如果未启用mysqlnd将不支持协程化
@@ -107,6 +107,8 @@ class co
             $ret = mysql()->query("select budget_rate from pmp_config_creative where id=2;");
             var_dump($ret, microtime(true));
         });
+        
+        var_dump(app_config(), server_config(), config());
         
         return json_encode([
             'key' => 'co::test2' . microtime(true)
