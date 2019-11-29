@@ -33,6 +33,11 @@ class before
     {
 
     }
+    
+    public function router_test_hello()
+    {
+        var_dump("before: " . microtime(true));
+    }
 
 
 }

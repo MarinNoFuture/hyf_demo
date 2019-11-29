@@ -4,9 +4,7 @@ return [
     'port' => 8088,
     'server_set' => [
         'worker_num' => 10,
-        'task_worker_num' => 1
+        'task_worker_num' => 10
     ],
-    'log' => [
-        'dir' => '/tmp/log'
-    ]
+    //'enableCoroutine' => 1
 ];

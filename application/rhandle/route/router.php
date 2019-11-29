@@ -171,6 +171,5 @@ class router
             });
         });
         
-        return $router::dispatch();
     }
 }

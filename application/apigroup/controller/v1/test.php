@@ -34,7 +34,7 @@ class test
         var_dump($result);
 
         //$result_slave = mysql('mysql_slave')->query("select id from pmp_config_media limit 1,1;");
-        
+
         $a = model('bbb/ccc', [1], [2])->getById();
         var_dump($a);
         

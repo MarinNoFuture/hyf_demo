@@ -27,9 +27,9 @@ class timer_sd
     public function run()
     {
         echo "timer sd" . date("Y-m-d H:i:s") . PHP_EOL;
-        // sleep(5);
+        //sleep(5);
         if (table('user')->exists('hi')) {
-            var_dump(table('user')->get('hi'));
+           var_dump(table('user')->get('hi'));
         }
     }
 }

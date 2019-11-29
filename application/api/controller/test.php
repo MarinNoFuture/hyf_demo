@@ -51,18 +51,23 @@ class test
 
     public function hello()
     {
-        return 'hello';
+        return output::success(["msg" => "hello", "time" => microtime(true)]);
     }
-    
+
     // 异步task示例
     public function async_test()
     {
-        $task_id1 = task('async/test/md::tsd', 'data: testxxxxxxxx111', function($data, $task_id){
+        var_dump(server_config());
+        
+        $task_id1 = task('async/test/md::tsd', 'data: testxxxxxxxx111', function ($data, $task_id) {
             var_dump($data, $task_id);
         });
-        $task_id2 = task('async/test/md::tyd', 'data: testxxxxxxxx222', function($data, $task_id){
+        $task_id2 = task('async/test/md::tyd', request()->get, function ($data, $task_id) {
             var_dump($data, $task_id);
         });
-        return output::success(["task_id"=>$task_id1 . "|" . $task_id2, "memo"=>"async_test"]);
+        return output::success([
+            "task_id" => $task_id1 . "|" . $task_id2, 
+            "memo" => "async_test"
+        ]);
     }
 }
