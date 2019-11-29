@@ -172,4 +172,16 @@ class router
         });
         
     }
+    
+    // 请求前处理（全局事件）（方法可选）
+    public function _before()
+    {
+        echo "_before\n";
+    }
+    
+    // 请求完成后处理（全局事件）（方法可选）
+    public function _after()
+    {
+        echo "_after\n";
+    }
 }
