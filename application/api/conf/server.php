@@ -5,10 +5,10 @@ return [
     'server_set' => [
         'worker_num' => 2,
         'task_worker_num' => 2,
-        'package_max_length' => 100 * 1024 *1024, // ×î´óhttp post formÉÏ´«³ß´ç
-        'document_root' => '/makle/hyf/application/rhandle/static/', //¾²Ì¬×ÊÔ´Ä¿Â¼
+        'package_max_length' => 100 * 1024 *1024, // æœ€å¤§http post formä¸Šä¼ å°ºå¯¸
+        'document_root' => '/makle/hyf/application/rhandle/static/', //é™æ€èµ„æºç›®å½•
         'enable_static_handler' => 1
     ],
-    'content-type' => 'application/json; charset=utf-8' // ÉèÖÃÏìÓ¦Í·£¬Ä¬ÈÏÖµ£ºapplication/json; charset=utf-8
+    'content-type' => 'application/json; charset=utf-8' // è®¾ç½®å“åº”å¤´ï¼Œé»˜è®¤å€¼ï¼šapplication/json; charset=utf-8
     //'enableCoroutine' => 1
 ];
