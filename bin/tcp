@@ -1,0 +1,9 @@
+<?php
+// 引入自动加载
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// 设置主路径
+Hyf::$dir = __DIR__ . '/../';
+
+// 执行应用
+Hyf::Run('tcp');

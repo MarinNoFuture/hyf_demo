@@ -17,5 +17,11 @@ class md
         var_dump($param, server()->worker_id);
         return "ok tyd";
     }
+    
+    public function tyd2($param)
+    {
+        sleep(5);
+        var_dump($param, server()->worker_id);
+    }
 
 }

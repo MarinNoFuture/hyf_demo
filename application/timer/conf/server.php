@@ -1,4 +1,8 @@
 <?php
 return [
-    'enableCoroutine' => 0 //是否开启一键协程化，将php某些原生语法在go函数中协程化，1 开启， 0 关闭
+    'server_set' => [
+        'worker_num' => 1,
+        'task_worker_num' => 5
+    ],
+    //'enableCoroutine' => 1
 ];

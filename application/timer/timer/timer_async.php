@@ -27,7 +27,14 @@ class timer_async
     public function run()
     {
         echo "timer async. | " . date("Y-m-d H:i:s") . PHP_EOL;
-        mysql()->query("select sleep(10);");
-        echo "timer async - sleep 10. | " . date("Y-m-d H:i:s") . PHP_EOL;
+        //mysql()->query("select sleep(10);");
+        //echo "timer async - sleep 10. | " . date("Y-m-d H:i:s") . PHP_EOL;
+        task('timer/timer_async::test', 'test');
+    }
+    
+    public function test($data)
+    {
+        sleep(5);
+        var_dump($data);
     }
 }

@@ -25,6 +25,7 @@ class router
             ]);
         });
         $router::get('/test/hello', function () {
+            var_dump(request());
             return 'hello';
         });
         
@@ -44,6 +45,24 @@ class router
                 ]
             ]);
         });
+        
+        // middleware before | after test
+        $router::get('/m2', function () {
+            echo "hello middleware before.\n";
+        }, function () {
+            return json_encode([
+                "ret" => 0, 
+                "msg" => "ok", 
+                "data" => [
+                    "hello middleware"
+                ]
+            ]);
+        }, function () {
+            echo "hello middleware after.\n";
+        });
+        
+        $router::get('/m3', 'test@abc', 'test@index', 'test@abc');
+        
         $router::get('/middleware/test', 'test@abc', 'test@index');
         
         // group
@@ -171,6 +190,44 @@ class router
             });
         });
         
+        // group middleware befor | after test
+        $router::group('/g1', function () {
+            echo "g1 group middleware before\n";
+        }, function ($r) {
+            $r::get('/test', function () {
+                echo "test middleware before\n";
+            }, function () {
+                return json_encode([
+                    "ret" => 0, 
+                    "msg" => "ok", 
+                    "data" => [
+                        "hello group test"
+                    ]
+                ]);
+            }, function () {
+                echo "test middleware after\n";
+            });
+            $r::get('/test2', 'test@index');
+        }, function () {
+            echo "g1 group middleware after\n";
+        });
+        
+        $router::group('/g2', 'test@abc', function ($r) {
+            $r::get('/test', function () {
+                echo "test middleware before\n";
+            }, function () {
+                return json_encode([
+                    "ret" => 0, 
+                    "msg" => "ok", 
+                    "data" => [
+                        "hello group test"
+                    ]
+                ]);
+            }, function () {
+                echo "test middleware after\n";
+            });
+            $r::get('/test2', 'test@index');
+        }, 'test@abc');
     }
     
     // 请求前处理（全局事件）（方法可选）
